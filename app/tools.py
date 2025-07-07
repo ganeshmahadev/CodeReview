@@ -1,9 +1,9 @@
 from langchain_core.tools import tool
-from langchain_core.prompts import ChatPromptTemplate
 from app.llm_utils import code_analysis_llm
+from langchain_core.prompts import ChatPromptTemplate
 import json
 
-# --- Code Analysis Tools ---
+# --- Expert Code Analysis Tools ---
 
 @tool
 def read_code_file(file_path: str) -> str:
@@ -111,4 +111,5 @@ def generate_review_summary(error_report: str, quality_assessment: str, improvem
         
     return summary
 
+# List of all available tools for the orchestrator
 all_tools = [read_code_file, check_for_common_errors, assess_code_quality, suggest_improvements, generate_review_summary]

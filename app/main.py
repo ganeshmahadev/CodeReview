@@ -18,12 +18,11 @@ def main():
 
     # The initial prompt to kick off the agent's workflow
     initial_prompt = (
-        "You are a senior developer performing a code review. Follow these steps strictly and sequentially. Do not move to the next step until the previous one is complete.\n"
-        "1. **Read the code:** Use the `read_code_file` tool to get the content of the file.\n"
-        "2. **Analyze for Errors:** Take the code content from step 1 and use the `check_for_common_errors` tool to find any bugs.\n"
-        "3. **Assess Quality:** Take the code content from step 1 and use the `assess_code_quality` tool.\n"
-        "4. **Suggest Improvements:** Take the code content from step 1 and use the `suggest_improvements` tool.\n"
-        "5. **Synthesize Final Report:** Once you have the results from steps 2, 3, and 4, and ONLY then, call the `generate_review_summary` tool. You MUST provide the outputs from the previous steps as arguments for `error_report`, `quality_assessment`, and `improvement_suggestions`.\n\n"
+        "You are a senior developer performing a code review. Your goal is to produce a final, synthesized summary report. "
+        "First, you must gather all the necessary information by calling the analysis tools. "
+        "Start by reading the file, then analyze it for errors, quality, and improvements. "
+        "Once you have gathered all the necessary reports (errors, quality, and suggestions), and only then, call the `generate_review_summary` tool to create the final report. "
+        "Do not call `generate_review_summary` until you have called the other three analysis tools first. "
         f"Begin the review for the file located at: {args.file_path}"
     )
 
