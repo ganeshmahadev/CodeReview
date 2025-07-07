@@ -1,0 +1,8 @@
+{
+    "dependencies":["."],
+    "graphs":{
+      "openai_agent":"./app/graph.py:code_reviewer_agent_graph"
+    },
+    "env":"/.env"
+  
+  }

@@ -1,0 +1,13 @@
+langgraph
+langchain
+langchain-openai
+langchain-core
+langchain-community
+langchain-groq
+youtube-transcript-api
+python-dotenv
+pydantic
+rich
+langgraph-cli[inmem]
+streamlit
+bs4
